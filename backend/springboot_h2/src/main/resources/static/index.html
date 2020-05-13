@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        li{
+            border-color: 1px black;
+            border-radius: 2px;
+        }
+    </style>
+    
+    <h1>All Subscribers</h1>
+    <div id="app">
+        
+        <ul v-for="subscriber in subscribers">
+            <li >{{ subscriber.firstname }}</li>
+            <li >{{ subscriber.lastname }}</li>
+            <li >{{ subscriber.email }}</li>
+            <li >{{ subscriber.category }}</li>
+
+        </ul>
+    </div>
+
+
+    <script>
+        const apiURL = "http://localhost:8080/getAllSubscribers";
+        new Vue({
+            el: '#app',
+            data(){
+                return {
+                    subscribers: []
+                }
+            },
+            created(){
+                fetch(apiURL)
+                .then(response => {
+                   return response.json();
+                })
+                .then(subscribers => {
+                    this.subscribers = subscribers;
+                })
+            }
+        });
+    </script>
+</body>
+</html>
