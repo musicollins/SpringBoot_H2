@@ -18,9 +18,9 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner runner( SubscriberRepository repository){
 		return args -> {
-			repository.save(new Subscriber("John", "Doe", "johndoe@gmail.com"));
-			repository.save(new Subscriber("Jane", "Doe", "janedoe@gmail.com"));
-			repository.save(new Subscriber("Jack", "Doe", "jackdoe@gmail.com"));
+			repository.save(new Subscriber("Jax", "Briggs", "jax@gmail.com", "mortal-kombat"));
+			repository.save(new Subscriber("Sinder", "Fire", "sinder@gmail.com", "killer-instinct"));
+			repository.save(new Subscriber("Wolka", "Chin", "rideeeee@gmail.com", "street-fighter"));
 			
 
 		};

@@ -13,13 +13,15 @@ public class Subscriber {
     private String firstname;
     private String lastname;
     private String email;
+    private String category;
 
     public Subscriber(){}
 
-    public Subscriber(String firstname, String lastname, String email) {
+    public Subscriber(String firstname, String lastname, String email, String category) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.category = category;
     }
     
 
@@ -55,11 +57,23 @@ public class Subscriber {
         this.email = email;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    
+
     @Override
     public String toString() {
         return "Subscriber [email=" + email + ", firstname=" + firstname + ", id=" + id + ", lastname=" + lastname
                 + "]";
     }
+
+    
 
     
 
